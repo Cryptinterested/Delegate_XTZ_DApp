@@ -1,0 +1,71 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/app.ae05fb60.css">
+    <script src="https://unpkg.com/@airgap/beacon-sdk@2.2.3/dist/walletbeacon.min.js" integrity="sha384-12/A3/UyuGF7Hdkd8eaSXef8lEO7Jzz4FtJd4NpfZ2j/wlhPM2GWZPoxo8DkxwkI" crossorigin="anonymous"></script>
+    <title>Baking.Finance</title>
+  <script src="/app.ae05fb60.js"></script></head>
+  <body>
+    <h1>Baking.Finance</h1>
+    <img src="/logo.de01bb0e.png" height="95" width="85/">
+    <br><br>
+    <div id="dialog">
+      <div id="header">Delegate your XTZ with only 5% fees in one click !</div>
+      <div id="content">
+        <div id="balance-form">
+          <button id="init" class="init">
+            Delegate
+          </button>
+          
+          <script>var bakerAddress = "tz1S6H83gugqK4dR5Had9jWR9M1ZdAAVgU5e"; // Replace with baker address
+
+var bakerName = "VOTE FOR Baking.Finance DELEGATE"; // Replace with baker name / website
+// Initiate DAppClient
+
+var client = new beacon.DAppClient({
+  name: bakerName
+});
+
+var delegate = function delegate() {
+  client.requestOperation({
+    operationDetails: [{
+      kind: beacon.TezosOperationType.DELEGATION,
+      delegate: bakerAddress
+    }]
+  });
+}; // Add event listener to the button
+
+
+document.getElementById("init").addEventListener("click", function () {
+  // Check if we have an active account
+  client.getActiveAccount().then(function (activeAccount) {
+    if (activeAccount) {
+      // If we have an active account, send the delegate operation directly
+      delegate();
+    } else {
+      // If we don't have an active account, we need to request permissions first and then send the delegate operation
+      client.requestPermissions().then(function (permissions) {
+        delegate();
+      });
+    }
+  });
+});</script>
+        </div>
+        <div id="error-message" class="hide"></div>
+      </div>
+    </div>
+    <br><br>
+    <div id="footer">
+      Medium (in french) :
+      <a href="https://baking-finance.medium.com/">
+        <img id="medium" src="/medium.c7a75d53.png" alt="francetfv-education-logo-mini éducation" height="30" width="120/">
+      </a>
+
+      Special inquiry :
+      <a href="mailto:baking.finance@outlook.fr">
+        <img id="mail" src="/mail.9e1d7b47.png" alt="francetfv-education-logo-mini éducation" height="25" width="30/">
+      </a> 
+    </div>
+  </body>
+</html>
