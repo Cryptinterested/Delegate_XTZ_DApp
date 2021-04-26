@@ -110,6 +110,14 @@ h1 {
   margin-left: -5px;
 }
 
+#mobile {
+
+  margin-top: 300px;
+  margin-right: 400px;
+  color: #c09bc4;
+  font-weight: bold;
+}
+
 .show {
   display: flex;
 }
