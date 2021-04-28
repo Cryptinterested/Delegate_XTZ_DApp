@@ -120,17 +120,17 @@ h1 {
 
 #drapeau-francais {
   margin-top: -70px;
-  margin-right: -1600px;
+  margin-right: 1600px;
 }
 
 #drapeau-anglais {
   margin-top: -26px;
-  margin-right: -1710px;
+  margin-right: 1710px;
 }
 
 #drapeau-english-fr {
   margin-top: -26px;
-  margin-left: 1710px;
+  margin-left: -1710px;
 }
 
 .show {
