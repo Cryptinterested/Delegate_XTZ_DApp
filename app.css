@@ -112,10 +112,11 @@ h1 {
 
 #mobile {
 
-  margin-top: 300px;
-  margin-right: 400px;
+  margin-top: 10px;
+  margin-right: -370px;
   color: #c09bc4;
-  font-weight: bold;
+  font-size: 13px;
+  font-style: italic;
 }
 
 #drapeau-francais {
@@ -131,6 +132,15 @@ h1 {
 #drapeau-english-fr {
   margin-top: -26px;
   margin-left: -1710px;
+}
+
+#logo-footer {
+  color: #c09bc4;
+  margin-bottom: -2px;
+}
+
+#copyright {
+  color: #c09bc4;
 }
 
 .show {
