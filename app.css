@@ -74,6 +74,23 @@ h1 {
   padding: 5px;
 }
 
+#logobaking {
+  animation-name: bounce;
+
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
+}  
+@keyframes bounce {
+  0%   { transform: scale(1,1)      translateY(0); }
+  10%  { transform: scale(1.1,.9)   translateY(0); }
+  30%  { transform: scale(.9,1.1)   translateY(-15px); }
+  50%  { transform: scale(1.05,.95) translateY(0); }
+  57%  { transform: scale(1,1)      translateY(-7px); }
+  64%  { transform: scale(1,1)      translateY(0); }
+  100% { transform: scale(1,1)      translateY(0); }
+}
+
 #init:hover {
   background: #c09bc4;
   color: white;
@@ -134,6 +151,25 @@ h1 {
   margin-left: -1710px;
 }
 
+#telegram {
+  margin-top: -26px;
+  margin-right: -1600px;
+}
+
+#twitter {
+  margin-top: -40px;
+  margin-right: -1710px;
+}
+
+footer{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  padding-top:50px;
+  height:50px;
+  text-align: center;
+}
+  
 #logo-footer {
   color: #c09bc4;
   margin-bottom: -2px;
