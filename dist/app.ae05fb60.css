@@ -139,16 +139,15 @@ h1 {
 #drapeau-francais {
   margin-top: -70px;
   margin-right: 1600px;
+  color: #c09bc4;
+  font-weight: bold;
 }
 
 #drapeau-anglais {
-  margin-top: -26px;
-  margin-right: 1710px;
-}
-
-#drapeau-english-fr {
-  margin-top: -26px;
-  margin-left: -1710px;
+  margin-top: -18px;
+  margin-right: 1650px;
+  color: #c09bc4;
+  font-weight: bold;
 }
 
 #telegram {
@@ -162,7 +161,7 @@ h1 {
 }
 
 footer{
-  position:absolute;
+  position:auto;
   bottom:0;
   width:100%;
   padding-top:50px;
