@@ -136,18 +136,15 @@ h1 {
   font-style: italic;
 }
 
-#drapeau-francais {
-  margin-top: -70px;
-  margin-right: 1600px;
+#drapeau-francais, #drapeau-anglais {
   color: #c09bc4;
   font-weight: bold;
 }
 
-#drapeau-anglais {
-  margin-top: -18.5px;
-  margin-right: 1660px;
-  color: #c09bc4;
-  font-weight: bold;
+#lang {
+  position: static;
+  margin-top: -80px;
+  margin-right: 1600px;
 }
 
 #telegram {
