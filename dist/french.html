@@ -1,4 +1,3 @@
-
 <html>
   <head>
     <meta charset="UTF-8">
@@ -21,7 +20,7 @@
     <h1>Baking.Finance</h1>
     <img src="/logo.de01bb0e.png" height="95" width="85" id="logobaking">
     <div id="dialog">
-      <div id="header">Déléguez vos XTZ à seulement 5% de frais en un clic &#128176;!</div>
+      <div id="header">Déléguez vos XTZ et gagner ~5% de rendements annuels en un clic ! &#128176;</div>
       <div id="content">
         <div id="balance-form">
           <button id="init" class="init">
@@ -30,7 +29,7 @@
           
           <script>var bakerAddress = "tz1S6H83gugqK4dR5Had9jWR9M1ZdAAVgU5e"; // Replace with baker address
 
-var bakerName = "DELEGATE - Baking.Finance"; // Replace with baker name / website
+var bakerName = "Baking.Finance"; // Replace with baker name / website
 // Initiate DAppClient
 
 var client = new beacon.DAppClient({
@@ -77,6 +76,76 @@ document.getElementById("init").addEventListener("click", function () {
       </a>
     </div>
     <a id="mobile">*Mobile non supporté</a>
+
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="/app.ae05fb60.css">
+  <div class="container body1">
+  <h2>Questions fréquentes</h2>
+  <div class="accordion">
+    <div class="accordion-item">
+      <a>Qu'est-ce qu'une cryptomonnaie ?</a>
+      <div class="content">
+        <p>Une cryptomonnaie est une monnaie digitale émise par un logiciel distribué. Son émission est programmée. Elle est utilisable par le biais d'un réseau informatique
+          décentralisé.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <a>Qu'est-ce que la blockchain ?</a>
+      <div class="content">
+        <p>La blockchain (aussi appelée registre distribué) est une technologie informatique permettant de s'échanger de la valeur (la cryptomonnaie), sans nécessiter d'organe central de contrôle.
+          Les différents échanges et interactions y sont enregistrés de façon transparente et sécurisée.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <a>Qu'est-ce qu'un Baker dans la blockchain Tezos ?</a>
+      <div class="content">
+        <p>À l'image d'un mineur dans la blockchain Bitcoin, un Baker est un validateur de la blockchain Tezos. Il est, par des incitations économiques,
+          encouragé à créer les blocs constituant la blockchain et à veiller à l'intégrité des informations qui y sont contenues.</p>
+      </div>
+      <div class="accordion-item">
+        <a>Qu'est-ce qu'un Baking.Finance ?</a>
+        <div class="content">
+          <p>Baking.Finance est un baker de la blockchain Tezos.</p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <a>Qu'est-ce que la délégation ?</a>
+      <div class="content">
+        <p>C'est l'action de permettre en votre nom, à un Baker, de bénéficier de votre approbation pour valider des blocs et participer à l'évolution de la blockchain Tezos, grâce au mécanisme de vote du logiciel.
+          Grâce à la délégation, un Baker pourra valider plus de blocs, et par conséquent accroître sa contribution.
+          Attention, cela ne constitue en rien un prêt ou un envoi de fonds. Il s'agit de signer sur la blockchain une opération de délégation.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <a>Comment gagner ~5% de rendement annuel ?</a>
+      <div class="content">
+        <p>En nous déléguant vos XTZ (bouton DÉLÉGUER ci-dessus), vous devenez un déléguant et contribuez à la participation de notre Baker dans la blockchain Tezos. Ainsi, vous recevez tous les trois jours des nouveaux XTZ que nous distribuons
+          en contrepartie de votre délégation.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <a>Y a-t-il un risque de perdre mes fonds ?</a>
+      <div class="content">
+        <p>En effectuant l'action de déléguer vos XTZ, vous restez le seul maître de vos clés privées et donc de vos fonds. Ces fonds restent liquides, vous pouvez à tout moment les transférer ou les vendre
+          sur des plateformes d'échanges de cryptomonnaies.</p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>// Code By Webdevtrick ( https://webdevtrick.com )
+var items = document.querySelectorAll(".accordion a");
+
+function toggleAccordion() {
+  this.classList.toggle('active');
+  this.nextElementSibling.classList.toggle('active');
+}
+
+items.forEach(function (item) {
+  return item.addEventListener('click', toggleAccordion);
+});</script>
     <!--
     <footer>
         <img id="copyright" src="./logo.png" alt="baking-finance-light-logo" id="logo-footer" width="20">Copyright &copy; <a href="french.html" class="fg-white fw-medium">Baking.finance</a>. Tous droits réservés</p>
