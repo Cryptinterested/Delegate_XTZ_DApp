@@ -144,7 +144,6 @@ h1 {
 
 #dark_mode {
   margin-left: 0;
-  color: #c09bc4;
 }
 .dark,
 .dark * {
@@ -321,5 +320,21 @@ footer{
   display: none;
 }
 
+@media screen and (max-width: 800px) {
+
+  #price {
+    display: none;
+  }  
+  #lang {
+    margin: auto;
+    margin-bottom: 30px;
+  }
+
+  #logos-sociaux {
+    margin-top: -80px;
+    margin-right: 900px;
+  }
+
+}
 
 /*# sourceMappingURL=/app.ae05fb60.css.map */
