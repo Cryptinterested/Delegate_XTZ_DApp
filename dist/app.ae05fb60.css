@@ -21,6 +21,8 @@ h1 {
   border: 1px solid #c09bc4;
   border-radius: 3px;
   justify-content: center;
+  margin-left: 40px;
+
 }
 
 #header {
@@ -374,8 +376,7 @@ footer{
 
 }
 
-
-#main {
+.container {
   text-align: center;
 }
 
