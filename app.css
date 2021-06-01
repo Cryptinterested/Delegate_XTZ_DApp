@@ -117,8 +117,8 @@ h1 {
 
 #mail {
 
-  margin-top: -3px;
-  margin-left: 10px;
+  margin-top: -1px;
+  margin-left: 2px;
 }
 
 #medium {
@@ -141,6 +141,36 @@ h1 {
   font-weight: bold;
 }
 
+
+
+
+
+#dark_mode {
+  margin-left: 0;
+}
+.dark,
+.dark * {
+    background-color: #222;
+}
+.switch {
+  align-self: flex-end;
+  margin: 0.9375rem;
+}
+.inner-switch {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #555;
+  border-radius: 1.25rem;
+  width: 3.125rem;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.1875rem;
+  margin-left: 0.3125rem;
+}
+
+
+
+
 #lang {
   position: static;
   margin-top: -80px;
@@ -150,18 +180,12 @@ h1 {
 #xtzprice {
   color:#c09bc4;
   margin-top: -30px;
-  margin-right: -1260px;
-  
+  margin-right: -1500px;
 }
 
-#telegram {
-  margin-top: -60px;
-  margin-right: -1600px;
-}
-
-#twitter {
-  margin-top: -40px;
-  margin-right: -1710px;
+#logos-sociaux {
+  margin-left: -80px;
+  margin-bottom: -55px;
 }
 
 
