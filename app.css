@@ -197,13 +197,14 @@ html {
   margin: 0;
   padding: 0;
   font-family: 'Hind', sans-serif;
-  background: #f5f5f5;
+  background: #c09bc4;
   color: #c09bc4;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   min-height: 100vh;
+
 }
 .container {
   margin: 0 auto;
@@ -284,6 +285,9 @@ h3 {
 .accordion .content p {
   font-size: 1rem;
   font-weight: 300;
+  font-size: 16px;
+  font-weight:400;
+
 }
 .accordion .content.active {
   opacity: 1;
@@ -362,4 +366,8 @@ footer{
     font-size: 50px;
   }
 
+}
+
+#main {
+  text-align: center;
 }
