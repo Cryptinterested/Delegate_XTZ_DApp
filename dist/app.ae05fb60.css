@@ -346,6 +346,7 @@ footer{
   #price {
     display: none;
     position: center;
+
   }  
   #lang {
     margin: auto;
@@ -354,7 +355,7 @@ footer{
 
   #logos-sociaux {
     margin-top: -65px;
-    margin-right: 450px;
+    margin-left: -250px;
   }
 
   #footer {
@@ -372,6 +373,12 @@ footer{
   #xtzprice {
     margin: auto;
 
+  }
+  #medium {
+    margin-top: -3px;
+  }
+  #mail{
+    margin-top: 1px;
   }
 
 }
