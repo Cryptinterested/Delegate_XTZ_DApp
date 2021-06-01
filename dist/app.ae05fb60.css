@@ -324,6 +324,7 @@ footer{
   display: none;
 }
 
+
 @media screen and (max-width: 980px) {
 
   #content {
@@ -350,8 +351,8 @@ footer{
   }
 
   #logos-sociaux {
-    margin-top: -80px;
-    margin-right: 900px;
+    margin-top: -65px;
+    margin-right: 450px;
   }
 
   #footer {
@@ -366,7 +367,13 @@ footer{
     font-size: 50px;
   }
 
+  #xtzprice {
+    margin: auto;
+
+  }
+
 }
+
 
 #main {
   text-align: center;
