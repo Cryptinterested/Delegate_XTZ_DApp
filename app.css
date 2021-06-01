@@ -168,9 +168,6 @@ h1 {
   margin-left: 0.3125rem;
 }
 
-
-
-
 #lang {
   position: static;
   margin-top: -80px;
@@ -187,8 +184,6 @@ h1 {
   margin-left: -80px;
   margin-bottom: -55px;
 }
-
-
 
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
@@ -302,6 +297,12 @@ h3 {
   transition: all 0.35s ease 0.15s;
 }
 
+
+@media screen and (min-width: 800px) {
+  .container {
+    margin: 1em 2em;
+  }
+} 
 
 
 
