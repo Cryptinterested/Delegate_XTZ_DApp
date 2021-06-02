@@ -378,14 +378,22 @@ footer{
     margin-top: -3px;
   }
   #mail{
-    margin-top: 1px;
+    margin-top: 2px;
   }
-
 }
 
 .container {
   text-align: center;
 }
 
+#reseaux {
+  margin-top: 10px;
+}
+#twitter{
+  margin-top: -8px;
+}
+#telegram {
+  margin-top: -5.5px;
+}
 
 /*# sourceMappingURL=/app.ae05fb60.css.map */
