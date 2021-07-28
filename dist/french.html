@@ -2,16 +2,17 @@
   <head>
 
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="/app.ae05fb60.css">
-    <link href="/logo.de01bb0e.png" rel="shortcut icon">
-    <script src="https://unpkg.com/@airgap/beacon-sdk@2.2.3/dist/walletbeacon.min.js" integrity="sha384-12/A3/UyuGF7Hdkd8eaSXef8lEO7Jzz4FtJd4NpfZ2j/wlhPM2GWZPoxo8DkxwkI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/app.76eeb1d1.css">
+    <link href="/logo.a67c7059.png" rel="shortcut icon">
+    <script src="https://unpkg.com/@airgap/beacon-sdk@2.3.0/dist/walletbeacon.min.js" crossorigin="anonymous"></script>
 
+    
 
     <div id="lang">
 
       <a id="dark_mode">Dark mode: <span class="inner-switch">OFF</span></a>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-      <script src="/dark_mode.585f7b71.js"></script>
+      <script src="/dark_mode.e6ad11ba.js"></script>
       |
     
       <a id="drapeau-anglais" href="/index.html"><!-- <img src="english.png" height=32 width=30/> -->en</a>
@@ -34,48 +35,52 @@
     <div class="container">
 
     <h1 id="title">Baking.Finance</h1>
-    <img src="/logo.de01bb0e.png" height="95" width="85" id="logobaking">
+    <img src="/logo.a67c7059.png" height="95" width="85" id="logobaking">
     <div id="dialog">
-      <div id="header">Déléguez vos XTZ et gagnez ~5% de rendements annuels en un clic ! &#128176;</div>
+      <div id="header">Déléguez vos XTZ et gagnez 6% de rendements annuels en un clic ! &#128176;</div>
       <div id="content">
         <div id="balance-form">
           <button id="init" class="init">
             Déléguer
           </button>
           
-          <script>var bakerAddress = "tz1S6H83gugqK4dR5Had9jWR9M1ZdAAVgU5e"; // Replace with baker address
+          <script>
 
-var bakerName = "Baking.Finance"; // Replace with baker name / website
-// Initiate DAppClient
-
-var client = new beacon.DAppClient({
-  name: bakerName
-});
-
-var delegate = function delegate() {
-  client.requestOperation({
-    operationDetails: [{
-      kind: beacon.TezosOperationType.DELEGATION,
-      delegate: bakerAddress
-    }]
-  });
-}; // Add event listener to the button
-
-
-document.getElementById("init").addEventListener("click", function () {
-  // Check if we have an active account
-  client.getActiveAccount().then(function (activeAccount) {
-    if (activeAccount) {
-      // If we have an active account, send the delegate operation directly
-      delegate();
-    } else {
-      // If we don't have an active account, we need to request permissions first and then send the delegate operation
-      client.requestPermissions().then(function (permissions) {
-        delegate();
-      });
-    }
-  });
-});</script>
+            const bakerAddress = "tz1S6H83gugqK4dR5Had9jWR9M1ZdAAVgU5e"; // Replace with baker address
+            const bakerName = "Baking.Finance"; // Replace with baker name / website
+  
+            // Initiate DAppClient
+            const client = new beacon.DAppClient({
+              name: bakerName,
+            });
+  
+            const delegate = () => {
+              client.requestOperation({
+                operationDetails: [
+                  {
+                    kind: beacon.TezosOperationType.DELEGATION,
+                    delegate: bakerAddress,
+                  },
+                ],
+              });
+            };
+  
+            // Add event listener to the button
+            document.getElementById("init").addEventListener("click", () => {
+              // Check if we have an active account
+              client.getActiveAccount().then((activeAccount) => {
+                if (activeAccount) {
+                  // If we have an active account, send the delegate operation directly
+                  delegate();
+                } else {
+                  // If we don't have an active account, we need to request permissions first and then send the delegate operation
+                  client.requestPermissions().then((permissions) => {
+                    delegate();
+                  });
+                }
+              });
+            });
+        </script>
         </div>
         <div id="error-message" class="hide"></div>
       </div>
@@ -84,17 +89,17 @@ document.getElementById("init").addEventListener("click", function () {
     <br><br>
     <div id="footer">
       <a href="https://baking-finance.medium.com/" target="_blank">
-        <img src="/medium.c7a75d53.png" alt="francetfv-education-logo-mini éducation" height="35" width="120/">
+        <img src="/medium.f46937d2.png" alt="francetfv-education-logo-mini éducation" height="35" width="120/">
       </a>
       <a href="mailto:baking.finance@outlook.fr">
-        <img src="/mail1.87a1a1bd.png" alt="francetfv-education-logo-mini éducation" height="35" width="35/">
+        <img src="/mail1.892dbfd1.png" alt="francetfv-education-logo-mini éducation" height="35" width="35/">
       </a>
-      <a href="https://t.me/baking_finance" target="_blank"><img src="/telegram.4f0919ef.png" height="35" width="35/"></a>
-      <a href="https://twitter.com/BakingFinance" target="_blank"><img src="/twitter.f93029d8.png" height="35" width="35/"></a>
+      <a href="https://t.me/baking_finance" target="_blank"><img src="/telegram.5bf7ab99.png" height="35" width="35/"></a>
+      <a href="https://twitter.com/BakingFinance" target="_blank"><img src="/twitter.3d7ab9bd.png" height="35" width="35/"></a>
     </div>
 
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <link rel="stylesheet" href="/app.ae05fb60.css">
+  <link rel="stylesheet" href="/app.76eeb1d1.css">
 
   <h2>Questions fréquentes</h2>
   <div class="accordion">
@@ -151,17 +156,17 @@ document.getElementById("init").addEventListener("click", function () {
   
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script>// Code By Webdevtrick ( https://webdevtrick.com )
-var items = document.querySelectorAll(".accordion a");
-
-function toggleAccordion() {
-  this.classList.toggle('active');
-  this.nextElementSibling.classList.toggle('active');
-}
-
-items.forEach(function (item) {
-  return item.addEventListener('click', toggleAccordion);
-});</script>
+<script>
+    // Code By Webdevtrick ( https://webdevtrick.com )
+    const items = document.querySelectorAll(".accordion a");
+    
+    function toggleAccordion(){
+      this.classList.toggle('active');
+      this.nextElementSibling.classList.toggle('active');
+    }
+    
+    items.forEach(item => item.addEventListener('click', toggleAccordion));
+</script>
     <!--
     <footer>
         <img id="copyright" src="./logo.png" alt="baking-finance-light-logo" id="logo-footer" width="20">Copyright &copy; <a href="french.html" class="fg-white fw-medium">Baking.finance</a>. Tous droits réservés</p>

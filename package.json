@@ -16,12 +16,12 @@
   "author": "Claude Barde",
   "license": "MIT",
   "dependencies": {
-    "@airgap/beacon-sdk": "^1.1.0",
-    "@taquito/beacon-wallet": "^6.3.1-beta.0",
+    "@airgap/beacon-sdk": "^2.3.1",
+    "@taquito/beacon-wallet": "^10.0.0",
     "@taquito/taquito": "^6.3.1-beta.0",
     "babel-polyfill": "^6.26.0"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.9.4"
   }
 }
