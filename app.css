@@ -334,7 +334,7 @@ footer{
   }
 
   #lang {
-    font-size: 30px;
+    display: none;
 
   }
   #title {
@@ -346,13 +346,7 @@ footer{
   }
   #price {
     display: none;
-    position: center;
-
   }  
-  #lang {
-    margin: auto;
-    margin-bottom: 30px;
-  }
 
   #logos-sociaux {
     margin-top: -65px;
