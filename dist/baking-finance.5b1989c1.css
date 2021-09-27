@@ -3,6 +3,28 @@
     width: auto
 }
 
+#content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#faq {
+    font-weight: bold;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.accordion-a {
+    margin-left: 20px;
+    
+}
+
+.accordion-item-a {
+ font-weight: bold;
+ 
+}
+
 .exchange-card {
     height: 100%
 }

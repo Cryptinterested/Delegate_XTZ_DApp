@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <script src="https://unpkg.com/@airgap/beacon-sdk@2.3.0/dist/walletbeacon.min.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -20,6 +19,8 @@
     <link type="text/css" rel="stylesheet" href="/animate.6a4e68a6.css">
 <script src="/bootstrap.dbb35db8.js"></script><script src="/default.aed0da50.js"></script><script src="/baking-finance.5b1989c1.js"></script><script src="/animate.6a4e68a6.js"></script></head>
 <body>
+
+    <script src="https://unpkg.com/@airgap/beacon-sdk@2.3.0/dist/walletbeacon.min.js" crossorigin="anonymous"></script>
 
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-light navbar-floating">
@@ -500,112 +501,62 @@
 </div>
 
 <!-- FAQ -->
-<div id="faq" class="page-section bg-light">
-    <div class="container">
-        <div class="row justify-content-center align-items-center">
-            <div class="col-lg-5 py-3 wow fadeInUp">
-                <h2 class="mb-4">Questions fréquentes</h2>
-                <p>Si vous vous posez des questions concernant la Blockchain, les Cryptomonnaies ou bien même Tezos, peut être la liste de questions-réponses suivante pourra vous éclairer.</p>
-                <p class="fg-primary fw-medium">Encore besoin d'aide?</p>
-                <a id="contact-us" href="#footer" class="btn btn-gradient btn-split-icon rounded-pill inline-flex-center">
-                     <span class="icon">
-                        <div class="inline-flex-center" style="height: 100%; ">
-                           <img class="custom-icon-2 height-auto" src="/mail-icon.4dd6cbbb.png">
-                        </div>
-                     </span>
-                    Contactez nous
-                </a>
-            </div>
-            <div class="col-lg-7 py-3 no-scroll-x">
-                <div class="accordion accordion-gap" id="accordionFAQ">
-                    <div class="accordion-item wow fadeInRight">
-                        <div class="accordion-trigger">
-                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">What is delegation?</button>
-                        </div>
-                        <div id="collapse1" class="collapse" data-parent="#accordionFAQ">
-                            <div class="accordion-content">
-                                <p>
-                                    It is the action of allowing, on your behalf, a Baker to get your approval in order to validate blocks and participate in the blockchain evolution, through the Tezos voting process.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item wow fadeInRight">
-                        <div class="accordion-trigger">
-                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">How can I earn ~6% annual rewards in Tez?</button>
-                        </div>
-                        <div id="collapse1" class="collapse" data-parent="#accordionFAQ">
-                            <div class="accordion-content">
-                                <p>
-                                    By delegating tez, a user will increase a Baker ability to participate in the network and blocks validation. 
-                                    Carefully notes that delegation doesn't mean lending or sending your funds. It is simply about signing a delegation operation in the Tezos blockchain.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item wow fadeInRight" data-wow-delay="300ms">
-                        <div class="accordion-trigger">
-                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">Can I lose my funds?</button>
-                        </div>
-                        <div id="collapse3" class="collapse" data-parent="#accordionFAQ">
-                            <div class="accordion-content">
-                                <p>By delegating your tez, you stay the only owner of the private keys that control the funds. Your delegated funds stay liquid, therefore, at any time you can
-                                 transfer them, or sell them on a cryptocurrency exchange.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item wow fadeInRight" data-wow-delay="450ms">
-                        <div class="accordion-trigger">
-                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">What is a blockchain?</button>
-                        </div>
-                        <div id="collapse4" class="collapse" data-parent="#accordionFAQ">
-                            <div class="accordion-content">
-                                <p>Blockchain (also known as distributed ledger) is a computer technology allowing to exchange value (the cryptocurrency), without needing any central entity to control the system.
-                                    Exchanges and interactions occurring within the blockchain are registered transparently and securely.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item wow fadeInRight" data-wow-delay="600ms">
-                        <div class="accordion-trigger">
-                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">What is delegation?</button>
-                        </div>
-                        <div id="collapse5" class="collapse" data-parent="#accordionFAQ">
-                            <div class="accordion-content">
-                                <p>By delegating tez, a user will increase a Baker ability to participate in the network and blocks validation. 
-                                    Carefully notes that delegation doesn't mean lending or sending your funds. It is simply about signing a delegation operation in the Tezos blockchain.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item wow fadeInRight" data-wow-delay="650ms">
-                        <div class="accordion-trigger">
-                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">What is Baking.Finance?</button>
-                        </div>
-                        <div id="collapse6" class="collapse" data-parent="#accordionFAQ">
-                            <div class="accordion-content">
-                                <p>Baking.Finance is a Baker of the Tezos blockchain.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item wow fadeInRight" data-wow-delay="800ms">
-                        <div class="accordion-trigger">
-                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">What is a Baker in the Tezos blockchain?</button>
-                        </div>
-                        <div id="collapse7" class="collapse" data-parent="#accordionFAQ">
-                            <div class="accordion-content">
-                                <p>Like minors in the Bitcoin blockchain, a Baker is a validator of the Tezos blockchain. He is, by economic incentives, encouraged to validate transactions and create blocks.
-                                    The Baker ensures information integrity and security of the Tezos blockchain.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="accordion-a">
+    <h2 id="faq">Frequently Asked Questions</h2>
+    <div class="accordion-item">
+      <div class="accordion">
+        <div class="accordion-item">
+          <a class="accordion-item-a">What is a cryptocurrency?</a>
+          <div class="content">
+            <p>A cryptocurrency is a digital asset issued by a distributed software. The monetary issuance is programmed. It is usable through distributed computer networks.</p>
+          </div>
         </div>
+        <div class="accordion-item">
+          <a class="accordion-item-a">What is a blockchain?</a>
+          <div class="content">
+            <p>Blockchain (also known as distributed ledger) is a computer technology allowing to exchange value (the cryptocurrency), without needing any central entity to control the system.
+              Exchanges and interactions occurring within the blockchain are registered transparently and securely.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <a class="accordion-item-a">What is a Baker in the Tezos blockchain?</a>
+          <div class="content">
+            <p>Like minors in the Bitcoin blockchain, a Baker is a validator of the Tezos blockchain. He is, by economic incentives, encouraged to validate transactions and create blocks.
+               The Baker ensures information integrity and security of the Tezos blockchain.</p>
+          </div>
+          <div class="accordion-item">
+            <a class="accordion-item-a">What is Baking.Finance ?</a>
+            <div class="content">
+              <p>Baking.Finance is a Baker of the Tezos blockchain.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <a class="accordion-item-a">What is delegation?</a>
+          <div class="content">
+            <p>It is the action of allowing, on your behalf, a Baker to get your approval in order to validate blocks and participate in the blockchain evolution, through the Tezos voting process. <br>
+              By delegating tez, a user will increase a Baker ability to participate in the network and blocks validation. 
+              Carefully notes that delegation doesn't mean lending or sending your funds. It is simply about signing a delegation operation in the Tezos blockchain.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <a class="accordion-item-a">How can I earn ~6% annual rewards in tez?</a>
+          <div class="content">
+            <p>By delegating your funds (button DELEGATE above), you become a delegator and make a contribution to our Baker. Thus, every ~3 days, you will receive new XTZ from us,
+              to reward your contribution.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <a class="accordion-item-a">Can I lose my funds?</a>
+          <div class="content">
+            <p>By delegating your tez, you stay the only owner of the private keys that control the funds. Your delegated funds stay liquid, therefore, at any time you can
+              transfer them, or sell them on a cryptocurrency exchange.</p>
+          </div>
+        </div>
+      </div>  
     </div>
-</div>
+    </div>
+
 
 <!-- Footer -->
 <footer id="footer" class="page-footer-section bg-dark fg-white">
