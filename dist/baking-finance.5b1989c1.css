@@ -144,7 +144,8 @@ a.wallet:hover {
     width: 50px;
     height: 50px;
     background-repeat: no-repeat;
-    background-size: cover
+    background-size: cover;
+    background-image: url(logo-light.43d8aca0.png);
 }
 
 @media screen and (max-width:991px) {

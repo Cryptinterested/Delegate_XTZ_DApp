@@ -164,12 +164,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":49}],46:[function(require,module,exports) {
+},{"./bundle-url":49}],44:[function(require,module,exports) {
 
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./images/logo_baking.png":49,"_css_loader":47}],43:[function(require,module,exports) {
+},{"./images/logo-light.png":153,"./images/logo_baking.png":49,"_css_loader":47}],87:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -198,7 +198,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '40345' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '34519' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -417,5 +417,5 @@ LazyPromise.prototype.catch = function (onError) {
   return this.promise.catch(onError);
 };
 },{"./bundle-url":49}],0:[function(require,module,exports) {
-var b=require(140);b.load([["logo_baking.d690edc1.png",49]]);
-},{}]},{},[43,0], null)
+var b=require(140);b.load([["logo-light.43d8aca0.png",153],["logo_baking.d690edc1.png",49]]);
+},{}]},{},[87,0], null)
