@@ -1,188 +1,700 @@
-<html>
-  <head>
-
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="./app.css" />
-    <link href="./logo.png" rel="shortcut icon" >
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
     <script
       src="https://unpkg.com/@airgap/beacon-sdk@2.3.0/dist/walletbeacon.min.js"
       crossorigin="anonymous"
     ></script>
-    
-    
-    <div id="lang">
-      <a id="dark_mode" >Dark mode: <span class="inner-switch">OFF</span></a>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-      <script src="dark_mode.js"></script>
-      | 
-      <a id="drapeau-anglais" href='index.html'><!-- <img src="english.png" height=32 width=30/> -->en</a>
-      <a id="drapeau-francais" href='french.html'><!-- <img src="francais.png" height=20 width=30/> -->fr</a>
-    </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta property="og:image" src="./images/baking-finance-thumbnail.png"/>
+    <meta name="description" content="Baking.finance - Déléguez vos XTZ"/>
+    <meta name="copyright" th:content="'Baking.finance, ' + ${domain}"/>
+    <meta property="og:title" content="Baking.finance"/>
+    <meta property="og:description" content="Baking.finance - Déléguez vos XTZ" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" th:content="${domain}"/>
+    <title>Baking.finance - Déléguez vos XTZ</title>
+    <link rel="shortcut icon" src="./images/logo_baking.png" type="image/x-icon"/>
+    <link type="text/css" rel="stylesheet" href="./bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="./default.css"/>
+    <link type="text/css" rel="stylesheet" href="./baking-finance.css"/>
+    <link type="text/css" rel="stylesheet" href="./animate.css"/>
+</head>
+<body>
 
-    <div id="xtzprice" class="inline">
-    <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
-    <p id="price" class="livecoinwatch-widget-6" lcw-coin="XTZ" lcw-base="USD" lcw-period="d" lcw-color-tx="#c09bc4" lcw-color-bg="#f5f5f5" lcw-border-w="0" ></p>
-    </div>
-    
-    <div hidden id="xtzprice" class="inline1">
-    <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
-    <p id="price" class="livecoinwatch-widget-6" lcw-coin="XTZ" lcw-base="USD" lcw-period="d" lcw-color-tx="#c09bc4" lcw-color-bg="#222" lcw-border-w="0" ></p>
-    </div>
-   
-  
-  
-  <title >Baking.Finance - Delegate your tez</title>
-  </head>
-  <body>
-
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light navbar-floating">
     <div class="container">
-    <h1 id="title">Baking Finance</h1>
- 
-    <img src="./logo.png" height=95 width=85 id="logobaking"/>
-    <div id="dialog">
-      <div id="header">Delegate your tez and earn 6% annual rewards in just one click ! &#128176;</div>
-      <div  id="content">
-        <div id="balance-form">
-          <button id="init" class="init">
-            Delegate
-          </button>
-          
-          <script>
-
-            const bakerAddress = "tz1S6H83gugqK4dR5Had9jWR9M1ZdAAVgU5e"; // Replace with baker address
-            const bakerName = "Baking.Finance"; // Replace with baker name / website
-  
-            // Initiate DAppClient
-            const client = new beacon.DAppClient({
-              name: bakerName,
-            });
-  
-            const delegate = () => {
-              client.requestOperation({
-                operationDetails: [
-                  {
-                    kind: beacon.TezosOperationType.DELEGATION,
-                    delegate: bakerAddress,
-                  },
-                ],
-              });
-            };
-  
-            // Add event listener to the button
-            document.getElementById("init").addEventListener("click", () => {
-              // Check if we have an active account
-              client.getActiveAccount().then((activeAccount) => {
-                if (activeAccount) {
-                  // If we have an active account, send the delegate operation directly
-                  delegate();
-                } else {
-                  // If we don't have an active account, we need to request permissions first and then send the delegate operation
-                  client.requestPermissions().then((permissions) => {
-                    delegate();
-                  });
-                }
-              });
-            });
-        </script>
-        </div>
-        <div id="error-message" class="hide"></div>
-      </div>
-    </div>
-  
-    <br></br>
-    <div id="footer">
-      <a href="https://baking-finance.medium.com/" target="_blank">
-        <img  src="medium.png" alt="francetfv-education-logo-mini éducation" height=35 width=120/>
-      </a>
-      <a href="mailto:baking.finance@outlook.fr">
-        <img  src="mail1.png" alt="francetfv-education-logo-mini éducation" height=35 width=35/>
-      </a>
-      <a  href='https://t.me/baking_finance' target="_blank"><img src="telegram.png" height=35 width=35/></a>
-      <a href='https://twitter.com/BakingFinance' target="_blank"><img src="twitter.png" height=35 width=35/></a>
-    </div>
-      
-    
-
-    <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
-  <link rel="stylesheet" href="app.css">
-  
-
-
-  <h2>Frequently Asked Questions</h2>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion">
-        <div class="accordion-item">
-          <a>What is a cryptocurrency?</a>
-          <div class="content">
-            <p>A cryptocurrency is a digital asset issued by a distributed software. The monetary issuance is programmed. It is usable through distributed computer networks.</p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <a>What is a blockchain?</a>
-          <div class="content">
-            <p>Blockchain (also known as distributed ledger) is a computer technology allowing to exchange value (the cryptocurrency), without needing any central entity to control the system.
-              Exchanges and interactions occurring within the blockchain are registered transparently and securely.</p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <a>What is a Baker in the Tezos blockchain?</a>
-          <div class="content">
-            <p>Like minors in the Bitcoin blockchain, a Baker is a validator of the Tezos blockchain. He is, by economic incentives, encouraged to validate transactions and create blocks.
-               The Baker ensures information integrity and security of the Tezos blockchain.</p>
-          </div>
-          <div class="accordion-item">
-            <a>What is Baking.Finance ?</a>
-            <div class="content">
-              <p>Baking.Finance is a Baker of the Tezos blockchain.</p>
+        <img id="baking-finance-logo" class="navbar-brand" src="./images/logo-light.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-lg-5 mt-3 mt-lg-0">
+                <li class="nav-item dropdown active">
+                    <a class="nav-link text-center" href="#introduction" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-center" href="#tezos">Tezos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-center" href="#nos-services">Nos Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-center" href="#investir">Investir</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-center" href="#tutoriels">Tutoriels</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-center" href="#faq">FAQ</a>
+                </li>
+            </ul>
+            <div class="flex-center btn btn-dark rounded-pill ml-auto">
+                <!-- <a class="flex-center btn btn-dark rounded-pill" href="#wallets">Delegate</a> -->
+                <a id="init">
+                Delegate
+                </a>
             </div>
-          </div>
+                <script>
+                const bakerAddress = "tz1S6H83gugqK4dR5Had9jWR9M1ZdAAVgU5e"; // Replace with baker address
+                const bakerName = "Baking.Finance"; // Replace with baker name / website
+    
+                // Initiate DAppClient
+                const client = new beacon.DAppClient({
+                name: bakerName,
+                });
+    
+                const delegate = () => {
+                client.requestOperation({
+                    operationDetails: [
+                    {
+                        kind: beacon.TezosOperationType.DELEGATION,
+                        delegate: bakerAddress,
+                    },
+                    ],
+                });
+                };
+    
+                // Add event listener to the button
+                document.getElementById("init").addEventListener("click", () => {
+                // Check if we have an active account
+                client.getActiveAccount().then((activeAccount) => {
+                    if (activeAccount) {
+                    // If we have an active account, send the delegate operation directly
+                    delegate();
+                    } else {
+                    // If we don't have an active account, we need to request permissions first and then send the delegate operation
+                    client.requestPermissions().then((permissions) => {
+                        delegate();
+                    });
+                    }
+                });
+                });
+            </script>
+                </div>
+            </div>
         </div>
-        <div class="accordion-item">
-          <a>What is delegation?</a>
-          <div class="content">
-            <p>It is the action of allowing, on your behalf, a Baker to get your approval in order to validate blocks and participate in the blockchain evolution, through the Tezos voting process.
-              By delegating tez, a user will increase a Baker ability to participate in the network and blocks validation. 
-              Carefully notes that delegation doesn't mean lending or sending your funds. It is simply about signing a delegation operation in the Tezos blockchain.</p>
-          </div>
+</nav>
+
+<!-- Introduction -->
+<div id="introduction" class="page-hero-section bg-image hero-home-1 text-white " th:style="background-image: url(./tezos-foundation-grants.png)">
+    <div class="hero-caption pt-5">
+        <div class="container h-100">
+            <div class="row align-items-center h-100">
+                <div class="col-lg-6 wow fadeInUp">
+                    <div>
+                        <div class="badge mb-2 inline-flex-center">
+                           <span class="icon mr-1">
+                              <img class="icon height-auto" src="./images/globe-icon.png">
+                           </span>
+                            #1 baking.finance
+                        </div>
+                    </div>
+                    <h2 class="mb-4 black-shadow">Delegate your tez and earn 6% annual rewards in just one click ! 💰</h2>
+                    <p class="mb-4 black-shadow">Participate in tomorrow's economy.<br>
+                        Discover the Tezos blockchain by delegating your coins.<br>
+                        Receive freshly created Tez every three days.
+                    </p>
+                    <a href="#tezos" class="btn btn-primary rounded-pill">See more</a>
+                </div>
+            </div>
         </div>
-        <div class="accordion-item">
-          <a>How can I earn ~6% annual rewards in tez?</a>
-          <div class="content">
-            <p>By delegating your funds (button DELEGATE above), you become a delegator and make a contribution to our Baker. Thus, every ~3 days, you will receive new XTZ from us,
-              to reward your contribution.</p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <a>Can I lose my funds?</a>
-          <div class="content">
-            <p>By delegating your tez, you stay the only owner of the private keys that control the funds. Your delegated funds stay liquid, therefore, at any time you can
-              transfer them, or sell them on a cryptocurrency exchange.</p>
-          </div>
-        </div>
-      </div>
-  
+    </div>
 </div>
 
+<!-- Tezos -->
+<div id="tezos" class="position-realive" th:style="'background-image: url(./pattern_1.svg);'">
+    <div class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-1 py-3 wow fadeInUp inline-flex-center">
+                    <div>
+                        <h1 class="mb-4">Tezos</h1>
+                        <p class="mb-4"><strong>Tezos</strong> est un logiciel informatique qui assure la fonction de registre distribué (blockchain). <br>
+                            L'unité de compte est une <strong>cryptomonnaie</strong> (monnaie digitale) propre au protocole (le "tez", sigle : ꜩ ou<strong> XTZ</strong>)
+                        </p>
+                        <a href="https://tezos.com" target="_blank" class="btn btn-outline-primary rounded-pill">Tezos.com</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 py-3 inline-flex-center">
+                    <div class="img-place wow zoomIn flex-vertical-direction">
+                        <img id="tezos-design-logo" class="height-auto" src="./images/tezos-design.png" alt="tezos-logo">
+                        <div id="price-widget" class="coinmarketcap-currency-widget" data-currencyid="2011" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="EUR"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-section">
+            <h2 class="text-center wow fadeIn">Banking on Tezos</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 py-3 inline-flex-center">
+                        <div class="img-place mobile-preview wow zoomIn">
+                            <img class="height-auto" src="./images/3d-tezos-decentralized-security-smart-contract.png" alt="smart-contracts-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 py-3 mt-lg-5">
+                        <div class="iconic-list">
+                            <div class="iconic-item wow fadeInUp">
+                                <div class="iconic-md iconic-text bg-warning fg-white rounded-circle">
+                                    <img class="custom-icon" src="./images/contract-icon.png">
+                                </div>
+                                <div class="iconic-content">
+                                    <h5>Les Smart Contracts</h5>
+                                    <p class="fs-small">Une des particularités de la Blockchain <strong>Tezos</strong> est qu'elle permet le développement de contrats intelligents
+                                        (appelés <strong>Smart Contracts</strong>). <br>
+                                        Ces contrats <strong>intelligents</strong> sont des programmes informatiques déployés sur la <strong>Blockchain</strong> et qui exécutent des opérations sur cette dernière.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="iconic-item wow fadeInUp">
+                                <div class="iconic-md iconic-text bg-info fg-white rounded-circle">
+                                    <img class="custom-icon" src="./images/security-icon.png">
+                                </div>
+                                <div class="iconic-content">
+                                    <h5>La Sécurité</h5>
+                                    <p class="fs-small">La blockchain Tezos offre également des garanties de <strong>sécurité</strong>,
+                                        notamment grâce à des méthodes <strong>formelles de vérification</strong>
+                                        (méthode de preuve d'un programme informatique) permettant de prouver <strong>mathématiquement</strong> les Smart Contracts qui y sont déployés.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="iconic-item wow fadeInUp">
+                                <div class="iconic-md iconic-text bg-indigo fg-white rounded-circle">
+                                    <img class="custom-icon" src="./images/nodes-icon.png">
+                                </div>
+                                <div class="iconic-content">
+                                    <h5>La Gouvernance</h5>
+                                    <p class="fs-small">
+                                        Son mécanisme de gouvernance dit "<strong>on-chain</strong>", caractérisé par un processus de vote sur la chaîne de bloc,
+                                        permet l'autoévolution du logiciel par un système de proposition et de <strong>vote de la communauté.</strong><br>
+                                        La <strong>Fondation Tezos</strong> est un organisme à but non lucratif en charge des moyens de développement et d'évolution de cette infrastructure.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
-<script>
-    // Code By Webdevtrick ( https://webdevtrick.com )
-    const items = document.querySelectorAll(".accordion a");
-    
-    function toggleAccordion(){
-      this.classList.toggle('active');
-      this.nextElementSibling.classList.toggle('active');
-    }
-    
-    items.forEach(item => item.addEventListener('click', toggleAccordion));
-</script>
+<!-- Nos Services -->
+<div id="nos-services" class="page-section no-scroll bg-dark">
+    <div class="container">
+        <h1 class="text-center fg-white">Nos Services</h1>
+        <p class="fs-large font-italic fg-white text-center">Nous sommes un validateur du réseau Tezos (appelé Baker).
+            <br>
+            Nous participons à la décentralisation et à la sécurité de la blockchain Tezos.
+        </p>
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-10">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4 py-3 wow fadeInLeft">
+                        <div class="card card-body border-0 text-center shadow pt-5">
+                            <div class="svg-icon mx-auto mb-4">
+                                <img src="./images/earning.png" alt="earning-image">
+                            </div>
+                            <h5 class="fg-gray">Earning</h5>
+                            <p class="fs-small">La possibilité de déléguer vos XTZ et de reçevoir vos rendements tous les 3 jours</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 py-3 wow fadeInUp">
+                        <div class="card card-body border-0 text-center shadow pt-5">
+                            <div class="svg-icon mx-auto mb-4">
+                                <img src="./images/payment.png" alt="wallets-image">
+                            </div>
+                            <h5 class="fg-gray">Wallets</h5>
+                            <p class="fs-small">Une initiation aux différents portefeuilles Tezos que vous pouvez utiliser</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 py-3 wow fadeInRight">
+                        <div class="card card-body border-0 text-center shadow pt-5">
+                            <div class="svg-icon mx-auto mb-4">
+                                <img src="./images/concept.png" alt="exchanges-image">
+                            </div>
+                            <h5 class="fg-gray">Exchanges</h5>
+                            <p class="fs-small">Une initiation aux différentes plateformes permettant d'acheter des XTZ et d'autres cryptomonnaies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <!--
-    <footer>
-    <div id="copyright">
-      <img src="./logo.png" alt="baking-finance-light-logo" id="logo-footer" width="20">Copyright &copy; <a href="index.html" class="fg-white fw-medium">Baking.finance</a>. All rights reserved</p>
-  </div>
-</footer> -->
-  </body>
+<!-- Wallets -->
+<div id="wallets" class="page-section" th:style="'pattern_1.svg'">
+    <h2 class="text-center wow fadeIn">Wallets & Applications</h2>
+    <div id="wallets-container"  class="container">
+        <div class="row">
+            <div class="col-lg-4 py-3">
+                <div class="iconic-list">
+                    <a class="iconic-item wow fadeInUp wallet" href="https://airgap.it/" target="_blank">
+                        <div class="iconic-content">
+                            <h5>AirGap</h5>
+                            <p class="fs-small">AirGap est un <strong>portefeuille</strong> disponible sous Android, IOS, macOS, Windows.</p>
+                        </div>
+                        <img src="./images/airgap-logo.png" alt="label" class="iconic-md fg-white">
+                    </a>
+                    <a class="iconic-item wow fadeInUp wallet" href="https://cryptonomic.tech/galleon.html" target="_blank">
+                        <div class="iconic-content">
+                            <h5>Galleon Wallet</h5>
+                            <p class="fs-small"><strong>Opensource</strong> et spécialisé <strong>Tezos</strong>, Galleon est un Wallet pouvant s'installer sous macOS, Windows et Linux.</p>
+                        </div>
+                        <img src="./images/cryptonomic-logo.png" alt="label" class="iconic-md fg-white">
+                    </a>
+                    <a class="iconic-item wow fadeInUp wallet" href="https://magmawallet.io/" target="_blank">
+                        <div class="iconic-content">
+                            <h5>Magma</h5>
+                            <p class="fs-small">Spécialisé dans la blockchain <strong>Tezos</strong>, Magma vient compléter Galleon Wallet en étant disponible sous Android et IOS.</p>
+                        </div>
+                        <img src="./images/magma-logo.png" alt="label" class="iconic-md fg-white">
+                    </a>
+                    <a class="iconic-item wow fadeInUp wallet" href="https://trezor.io/" target="_blank">
+                        <div class="iconic-content">
+                            <h5>Trezor (Hardware)</h5>
+                            <p class="fs-small">Trezor est un <strong>portefeuille</strong> physique dit <strong>Cold Wallet</strong>. Il protègera vos clés privés contre toute attaque informatique.</p>
+                        </div>
+                        <img src="./images/trezor-logo.png" alt="label" class="iconic-md fg-white">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 py-3 wow zoomIn inline-flex-center">
+                <div class="img-place mobile-preview">
+                    <img class="height-auto" src="./images/wallet-application.png" alt="wallet-application">
+                </div>
+            </div>
+            <div class="col-lg-4 py-3">
+                <div class="iconic-list">
+                    <a class="iconic-item wow fadeInUp wallet" href="https://zengo.com/" target="_blank">
+                        <img src="./images/zengo-logo.png" alt="label" class="iconic-md fg-white">
+                        <div class="iconic-content">
+                            <h5>ZenGo</h5>
+                            <p class="fs-small">ZenGo est un <strong>mutli-wallet</strong> supportant de nombreuses cryptomonnaies dont Tezos. Disponible sous Android & IOS.</p>
+                        </div>
+                    </a>
+                    <a class="iconic-item wow fadeInUp wallet" href="https://trezor.io/" target="_blank">
+                        <img src="./images/logo-kukai.png" alt="label" class="iconic-md fg-white">
+                        <div class="iconic-content">
+                            <h5>Kukai (Web)</h5>
+                            <p class="fs-small">Kukai vous permettra de créer vos premiers wallets Tezos <strong>en ligne</strong> sans installer de logiciel.</p>
+                        </div>
+                    </a>
+                    <a class="iconic-item wow fadeInUp wallet" href="https://trustwallet.com/" target="_blank">
+                        <img src="./images/trust-wallet-logo.png" alt="label" class="iconic-md fg-white">
+                        <div class="iconic-content">
+                            <h5>Trust Wallet</h5>
+                            <p class="fs-small">Très reconnu dans le milieu crypto, <strong>Trust Wallet</strong> supporte désormais <strong>Tezos</strong>. Il est disponible sous Android & IOS.</p>
+                        </div>
+                    </a>
+                    <a class="iconic-item wow fadeInUp wallet" href="https://www.ledger.com/" target="_blank">
+                        <img src="./images/ledger-logo.png" alt="label" class="iconic-md fg-white">
+                        <div class="iconic-content">
+                            <h5>Ledger (Hardware)</h5>
+                            <p class="fs-small">Concurrent direct de Trezor, Ledger est un <strong>portefeuille portatif</strong>. Les Cold Wallets sont réputés pour être plus fiable que tout autre type de wallet.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Investir -->
+<div id="investir" class="page-section no-scroll bg-dark fg-white">
+    <h2 class="text-center wow fadeIn mb-5">Investir</h2>
+    <div class="container">
+        <p class="text-center">Déléguez vos XTZ à notre Baker et générez 5% de rendement annuel. </p>
+        <div class="row align-items-center">
+            <div class="col-lg-5 wow fadeIn ">
+                <div class="img-place">
+                    <div id="qrcode-zone">
+                        <img class="wow fadeInLeft" src="./images/qr-code-tezos.png" alt="qr-code-tezos" style="width: 80%;">
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-3">
+                    <p id="public-key-p"><strong>Clé Public</strong> : tz1S6H83gugqK4dR5Had9jWR9M1ZdAAVgU5e</p>
+                    <input type="hidden" value="tz1S6H83gugqK4dR5Had9jWR9M1ZdAAVgU5e" id="public-key">
+                    <button id="public-key-button" class="btn btn-primary rounded-pill justify-content-center" onclick="copyPublicKey()">Copier la Clé Public</button>
+                </div>
+            </div>
+            <div class="col-lg-7 pl-lg-5 wow fadeInUp">
+                <div class="py-3">
+                    <div class="iconic-list">
+                        <div class="iconic-item wow fadeInUp">
+                            <div class="iconic-md iconic-text bg-warning fg-white rounded-circle">
+                                <img class="custom-icon" src="./images/delegate-icon.png">
+                            </div>
+                            <div class="iconic-content">
+                                <h5 class="font-weight-bold">Déléguer vos Tezos</h5>
+                                <p class="fs-small">Pour déléguer vos <strong>Tezos</strong>, il vous suffit de scanner le <strong>QR code</strong> ci-joint ou
+                                    de copier notre <strong>adresse</strong> à l'aide de l'application contenant vos coins (Exemple : ledger, magma wallet,...).
+                                    Vous trouverez des <strong>tutoriels de délégation</strong> dans la section <a href="#tutoriels"><strong>"Tutoriels"</strong></a>.
+                                    (Investissement minimum : <strong>10 XTZ</strong>)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="iconic-item wow fadeInUp">
+                            <div class="iconic-md iconic-text bg-info fg-white rounded-circle">
+                                <img class="custom-icon" src="./images/key-icon.png">
+                            </div>
+                            <div class="iconic-content">
+                                <h5 class="font-weight-bold">Restez maître de vos clés privées</h5>
+                                <p class="fs-small">En déléguant vos <strong>Tezos</strong>, vous restez le seul maître de vos <strong>Clés Privées</strong> et ne courez aucun risque de perdre vos fonds.
+                                    Une fois vos Tezos délégués, les nouveaux coins reçus sur votre portefeuille seront <strong>automatiquement
+                                        délégués</strong> sans nécessiter d'opération de votre part.
+                                    Vous pouvez à tout moment arrêter la délégation, transférer vos tezos ou encore les vendre sur une <strong>plateforme</strong> d'échange.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="iconic-item wow fadeInUp">
+                            <div class="iconic-md iconic-text bg-indigo fg-white rounded-circle">
+                                <img class="custom-icon" src="./images/earning-icon.png">
+                            </div>
+                            <div class="iconic-content">
+                                <h5 class="font-weight-bold">Recevez de nouveaux tezos régulièrement</h5>
+                                <p class="fs-small">En nous déléguant vos <strong>Tezos</strong>, vous recevrez des rendements tous les trois jours.
+                                    Ses rendements sont versés à partir du <strong>21ème jour</strong> après avoir réalisé l'opération de délégation.
+                                    Votre <strong>portefeuille</strong> électronique vous notifiera à chaque réception de nouveaux tezos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Exchanges -->
+<div id="exchanges" class="page-section no-scroll" th:style="'background-image: url(pattern_1.svg);'">
+    <div class="container">
+        <h2 class="text-center wow fadeIn mt-5">Les Plateformes d'Échanges</h2>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6 col-lg-3 py-3">
+                <a href="https://www.binance.com" target="_blank" class="card card-body border-0 text-center wow zoomIn shadow bg-white-transparent exchange-card">
+                    <div class="mb-3">
+                        <img class="exchange-logo" src="./images/binance-logo.png" alt="binance-logo">
+                    </div>
+                    <p class="fs-vlarge font-weight-bolder">Binance</p>
+                    <p class="fs-small fg-grey">Numéro 1 des plateformes de cryptomonnaies dans le monde avec 0.1% de frais</p>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3 py-3">
+                <a href="https://www.kraken.com/" target="_blank" class="card card-body border-0 text-center wow zoomIn shadow bg-white-transparent exchange-card" data-wow-delay="200ms">
+                    <div class="mb-3">
+                        <img class="exchange-logo" src="./images/kraken-logo.png" alt="kraken-logo">
+                    </div>
+                    <p class="fs-vlarge font-weight-bolder">Kraken</p>
+                    <p class="fs-small fg-grey">Leader du marché Américain, Kraken prend 0.2% de comission</p>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3 py-3">
+                <a href="https://www.coinbase.com/" target="_blank" class="card card-body border-0 text-center wow zoomIn shadow bg-white-transparent exchange-card" data-wow-delay="400ms">
+                    <div class="mb-3">
+                        <img class="exchange-logo" src="./images/coinbase-logo.png" alt="coinbase-logo">
+                    </div>
+                    <p class="fs-vlarge font-weight-bolder">Coinbase</p>
+                    <p class="fs-small fg-grey">Très reconnu dans le milieu, Coinbase vous simplifiera vos opérations</p>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3 py-3">
+                <a href="https://www.bitfinex.com/" target="_blank" class="card card-body border-0 text-center wow zoomIn shadow bg-white-transparent exchange-card" data-wow-delay="600ms">
+                    <div class="mb-3">
+                        <img class="exchange-logo" src="./images/bitfinex-logo.png" alt="bitfinex-logo">
+                    </div>
+                    <p class="fs-vlarge font-weight-bolder">Bitfinex</p>
+                    <p class="fs-small fg-grey">Situé à Hong Kong, Bitfinex est le concurrent direct de Binance</p>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3 py-3">
+                <a href="https://crypto.com/" target="_blank" class="card card-body border-0 text-center wow zoomIn shadow bg-white-transparent exchange-card" data-wow-delay="800ms">
+                    <div class="mb-3">
+                        <img class="exchange-logo" src="./images/crypto-com-logo.png" alt="crypto-com-logo">
+                    </div>
+                    <p class="fs-vlarge font-weight-bolder">Crypto.com</p>
+                    <p class="fs-small fg-grey">Fintech spécialisé dans les cryptomonnaies, Crypto.com prends très peu de frais</p>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3 py-3">
+                <a href="https://swissborg.com/" target="_blank" class="card card-body border-0 text-center wow zoomIn shadow bg-white-transparent exchange-card" data-wow-delay="1000ms">
+                    <div class="mb-3">
+                        <img class="exchange-logo" src="./images/swissborg-logo.png" alt="swissborg-logo">
+                    </div>
+                    <p class="fs-vlarge font-weight-bolder">SwissBorg</p>
+                    <p class="fs-small fg-grey">SwissBorg propose les mêmes services que Crypto.com. De la simplicité et peu de frais</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tuto -->
+<div id="tutoriels" class="page-section no-scroll bg-dark fg-white">
+    <h2 class="text-center wow fadeIn mb-5">Tutoriels</h2>
+    <div class="container">
+        <p class="text-center">Apprenez à déléguer sur la <strong>Blockchain Tezos</strong> au travers de ses wallets et outils décentralisés</p>
+        <div class="row flex-center">
+            <div class="wow fadeInUp">
+                <div class="py-3">
+                    <div class="iconic-list">
+                        <a class="iconic-item wow fadeInUp dynamic-border" target="_blank" href="https://baking-finance.medium.com/d%C3%A9l%C3%A9guer-ses-xtz-et-gagner-5-de-rendement-annuel-magma-wallet-dd6f971d81a8">
+                            <div class="oblong-logo">
+                                <img src="./images/medium-logo-white.png">
+                            </div>
+                            <div class="iconic-content">
+                                <h5 class="font-weight-bold fg-warning">Wallet Magma</h5>
+                                <p class="fs-small">Apprendre à créer et utiliser un portefeuille <strong>Tezos</strong> via le wallet <strong>Magma</strong>.<br>
+                                    - Durée du tutoriel : <strong>4 minutes</strong>
+                                </p>
+                            </div>
+                        </a>
+                        <a class="iconic-item wow fadeInUp dynamic-border" target="_blank" href="https://baking-finance.medium.com/d%C3%A9l%C3%A9guez-vos-xtz-%C3%A0-baking-finance-et-gagnez-5-de-rendement-annuel-ledger-nano-s-x-4186b705718b">
+                            <div class="oblong-logo">
+                                <img src="./images/medium-logo-white.png">
+                            </div>
+                            <div class="iconic-content">
+                                <h5 class="font-weight-bold fg-info">Wallet Legder (Hardware)</h5>
+                                <p class="fs-small">Installation et utilisation du portefeuille <strong>Ledger</strong> sur la Blockchain <strong>Tezos</strong>.<br>
+                                    - Durée du tutoriel : <strong>5 minutes</strong>
+                                </p>
+                            </div>
+                        </a>
+                        <a class="iconic-item wow fadeInUp dynamic-border" href="#tutoriels">
+                            <div class="oblong-logo">
+                                <img src="./images/medium-logo-white.png">
+                            </div>
+                            <div class="iconic-content">
+                                <h5 class="font-weight-bold fg-danger">Wallet AirGap</h5>
+                                <p class="fs-small">A venir...
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ -->
+<div id="faq" class="page-section bg-light">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-5 py-3 wow fadeInUp">
+                <h2 class="mb-4">Questions fréquentes</h2>
+                <p>Si vous vous posez des questions concernant la Blockchain, les Cryptomonnaies ou bien même Tezos, peut être la liste de questions-réponses suivante pourra vous éclairer.</p>
+                <p class="fg-primary fw-medium">Encore besoin d'aide?</p>
+                <a id="contact-us" href="#footer" class="btn btn-gradient btn-split-icon rounded-pill inline-flex-center">
+                     <span class="icon">
+                        <div class="inline-flex-center" style="height: 100%; ">
+                           <img class="custom-icon-2 height-auto" src="./images/mail-icon.png">
+                        </div>
+                     </span>
+                    Contactez nous
+                </a>
+            </div>
+            <div class="col-lg-7 py-3 no-scroll-x">
+                <div class="accordion accordion-gap" id="accordionFAQ">
+                    <div class="accordion-item wow fadeInRight">
+                        <div class="accordion-trigger">
+                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">Qu'est ce qu'une cryptomonnaie ?</button>
+                        </div>
+                        <div id="collapse1" class="collapse" data-parent="#accordionFAQ">
+                            <div class="accordion-content">
+                                <p>Une cryptomonnaie est un monnaie digitale émise par un logiciel distribué. Elle ne nécessite pas d'autorité centrale controlant son émission et est utilisable par le biais d'un réseau informatique
+                                    décentralisé.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item wow fadeInRight" data-wow-delay="150ms">
+                        <div class="accordion-trigger">
+                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Qu'est ce que la blockchain ? </button>
+                        </div>
+                        <div id="collapse2" class="collapse" data-parent="#accordionFAQ">
+                            <div class="accordion-content">
+                                <p>La blockchain (aussi appelé registre distribué) est une technologie informatique permettant de stocker et de transmettre des informations sans nécessiter d'organe central de contrôle.
+                                    Les informations y sont enregistrées de façon transparente et sécurisée (par le biais de méthodes cryptographiques).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item wow fadeInRight" data-wow-delay="300ms">
+                        <div class="accordion-trigger">
+                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">Qu'est ce qu'un Baker ?</button>
+                        </div>
+                        <div id="collapse3" class="collapse" data-parent="#accordionFAQ">
+                            <div class="accordion-content">
+                                <p>À l'image d'un mineur dans la blockchain Bitcoin, un Baker est un validateur de la blockchain Tezos. Il est, par des incitations économiques,
+                                    encouragé à créer les blocs constituant la blockchain et à veiller à l'intégrité des informations contenues.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item wow fadeInRight" data-wow-delay="450ms">
+                        <div class="accordion-trigger">
+                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">Qu'est ce que la délégation ?</button>
+                        </div>
+                        <div id="collapse4" class="collapse" data-parent="#accordionFAQ">
+                            <div class="accordion-content">
+                                <p>C'est l'action de permettre en votre nom à un Baker (validateur du réseau), de bénéficier de votre approbation pour valider des blocs avec vos fonds.
+                                    Attention, cela ne constitue en rien un prêt ou un envoie de fonds. Il s'agit de signer sur la blockchain une opération de délégation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item wow fadeInRight" data-wow-delay="600ms">
+                        <div class="accordion-trigger">
+                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">Comment gagner 5% de rendement annuel ?</button>
+                        </div>
+                        <div id="collapse5" class="collapse" data-parent="#accordionFAQ">
+                            <div class="accordion-content">
+                                <p>En nous déléguant vos XTZ, vous devenez un déléguant et contribuez à la participation de notre Baker dans la blockchain Tezos. Ainsi, vous recevez tous les trois jours les fonds que nous redistribuons
+                                    à nos délégués.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item wow fadeInRight" data-wow-delay="650ms">
+                        <div class="accordion-trigger">
+                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">Y a t'il un risque de perdre mes fonds ? </button>
+                        </div>
+                        <div id="collapse6" class="collapse" data-parent="#accordionFAQ">
+                            <div class="accordion-content">
+                                <p>En faisant l'action de délégation de vos XTZ, vous restez le seul maître de vos fonds. Vous pouvez à tout moment les transférer ou les vendre
+                                    sur des plateformes d'échanges de cryptomonnaies.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item wow fadeInRight" data-wow-delay="800ms">
+                        <div class="accordion-trigger">
+                            <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">Quand puis-je retirer mes fonds ? </button>
+                        </div>
+                        <div id="collapse7" class="collapse" data-parent="#accordionFAQ">
+                            <div class="accordion-content">
+                                <p>Vous pouvez à tout moment retirez vos fonds de la délégation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer id="footer" class="page-footer-section bg-dark fg-white">
+    <div class="container">
+        <div class="row mb-5 py-3">
+            <div class="col-sm-6 col-lg-2 py-3">
+                <h5 class="mb-3">Pages</h5>
+                <ul class="menu-link">
+                    <li><a href="#introduction">Accueil</a></li>
+                    <li><a href="#tezos">Tezos</a></li>
+                    <li><a href="#nos-services">Nos Services</a></li>
+                    <li><a href="#wallets">Wallets</a></li>
+                    <li><a href="#investir">Investir</a></li>
+                    <li><a href="#tutoriels">Tutoriels</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-6 col-lg-2 py-3">
+                <h5 class="mb-3">Liens utiles</h5>
+                <ul class="menu-link">
+                    <li><a href="https://tezos.com/" target="_blank">Tezos</a></li>
+                    <li><a href="https://bitcoin.fr/" target="_blank">Bitcoin.fr</a></li>
+                    <li><a href="https://blockchainfrance.net/" target="_blank">Blockchain France</a></li>
+                    <li><a href="https://ethereum.org/" target="_blank">Ethereum</a></li>
+                    <li><a href="https://www.coingecko.com/" target="_blank">CoinGecko</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-4 py-3">
+                <h5 class="mb-3">Contact</h5>
+                <ul class="menu-link">
+                    <li><a href="mailto:baking.finance@outlook.fr">baking.finance@outlook.fr</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-4 py-3">
+                <h5 class="mb-3">Suivre Baking.finance</h5>
+                <p>Obtenez des offres, des nouvelles et mise à jour du projet en exclusivité</p>
+                <form method="POST">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Your email..">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary"><span class="mai-send"></span></button>
+                        </div>
+                    </div>
+                </form>
+                <!-- Social Media Button -->
+                <div class="mt-4">
+                    <a href="https://www.facebook.com/Bakingfinance-100183958589461" target="_blank" class="btn btn-fab btn-primary fg-white">
+                        <div class="inline-flex-center" style="height: 100%; align-items: center;">
+                            <img class="custom-icon-2 height-auto" src="./images/facebook-icon.png">
+                        </div>
+                    </a>
+                    <a href="https://twitter.com/BakingFinance" target="_blank" class="btn btn-fab btn-primary fg-white">
+                        <div class="inline-flex-center" style="height: 100%; align-items: center;">
+                            <img class="custom-icon-2 height-auto" src="./images/twitter-icon.png">
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/baking.finance/" target="_blank" class="btn btn-fab btn-primary fg-white">
+                        <div class="inline-flex-center" style="height: 100%; align-items: center;">
+                            <img class="custom-icon-2 height-auto" src="./images/instagram-icon.png">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 py-2">
+                <img src="./logo-light.png" alt="baking-finance-light-logo" width="40">
+                <p class="d-inline-block ml-2">Copyright &copy; <a th:href="${domain}" class="fg-white fw-medium">Baking.finance</a>. All rights reserved</p>
+            </div>
+            <div class="col-12 col-md-6 py-2">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item"><a href="#footer" class="nav-link">Terms of Use</a></li>
+                    <li class="nav-item"><a href="#footer" class="nav-link">Privacy Policy</a></li>
+                    <li class="nav-item"><a href="#footer" class="nav-link">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+<script type="text/javascript" th:src="@{/javascripts/jquery-3.5.1.min.js}"></script>
+<script type="text/javascript" th:src="@{/javascripts/bootstrap.bundle.min.js}"></script>
+<script type="text/javascript" th:src="@{/javascripts/wow.min.js}"></script>
+<script type="text/javascript" th:src="@{/javascripts/default.js}"></script>
+<script type="text/javascript" th:src="@{/javascripts/baking-finance.js}"></script>
+</body>
 </html>
