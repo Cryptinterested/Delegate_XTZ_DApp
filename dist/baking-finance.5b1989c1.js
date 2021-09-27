@@ -164,12 +164,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":49}],101:[function(require,module,exports) {
+},{"./bundle-url":49}],46:[function(require,module,exports) {
 
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./logo.png":138,"_css_loader":47}],139:[function(require,module,exports) {
+},{"./images/logo.png":91,"_css_loader":47}],138:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -198,7 +198,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '40819' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '39825' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -417,5 +417,5 @@ LazyPromise.prototype.catch = function (onError) {
   return this.promise.catch(onError);
 };
 },{"./bundle-url":49}],0:[function(require,module,exports) {
-var b=require(140);b.load([["logo.a67c7059.png",138]]);
-},{}]},{},[139,0], null)
+var b=require(140);b.load([["logo.98ad69f8.png",91]]);
+},{}]},{},[138,0], null)
