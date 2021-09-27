@@ -169,7 +169,7 @@ module.exports = reloadCSS;
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./images/logo-light.png":153,"./images/logo_baking.png":49,"_css_loader":47}],73:[function(require,module,exports) {
+},{"./images/logo-light.png":153,"./images/logo_baking.png":49,"_css_loader":47}],74:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -198,7 +198,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '33203' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '38707' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -418,4 +418,4 @@ LazyPromise.prototype.catch = function (onError) {
 };
 },{"./bundle-url":49}],0:[function(require,module,exports) {
 var b=require(140);b.load([["logo-light.43d8aca0.png",153],["logo_baking.d690edc1.png",49]]);
-},{}]},{},[73,0], null)
+},{}]},{},[74,0], null)
