@@ -5,12 +5,11 @@ Available at: https://www.baking.finance
 
 ENJOY :money_with_wings: !
 
-Run the project: 
 
 Deploy the project:
 
-`git clone <YOUR_REPOSITORY_URL>`
+ - `git clone <YOUR_REPOSITORY_URL>`
 
-`npm install`
+ - `npm install`
 
-`npm run dev`
+ - `npm run dev`
