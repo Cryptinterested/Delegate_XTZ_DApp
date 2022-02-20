@@ -106,6 +106,10 @@ a.wallet:hover {
     .nav-link {
         color: #fff!important
     }
+    #delegatemobile {
+      visibility:hidden;
+    }
+    
 }
 
 .inline-flex-center {
@@ -156,6 +160,16 @@ a.wallet:hover {
 @media screen and (max-width:991px) {
     #baking-finance-logo {
         background-image: url(logo_baking.d690edc1.png)
+    }
+    #navmenu, #seemoreweb {
+      visibility: hidden;
+    }
+    #delegatemobile {
+      visibility:visible;
+    }
+    #positiondelegate {
+      margin-top: auto;
+      margin-left: auto;
     }
 }
 

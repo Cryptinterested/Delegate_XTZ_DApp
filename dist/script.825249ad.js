@@ -103,7 +103,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({195:[function(require,module,exports) {
+})({42:[function(require,module,exports) {
 var items = document.querySelectorAll('.accordion button');
 
 function toggleAccordion() {
@@ -121,7 +121,7 @@ function toggleAccordion() {
 items.forEach(function (item) {
   return item.addEventListener('click', toggleAccordion);
 });
-},{}],74:[function(require,module,exports) {
+},{}],148:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -150,7 +150,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '36441' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '34543' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -291,5 +291,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[74,195], null)
+},{}]},{},[148,42], null)
 //# sourceMappingURL=/script.825249ad.map
