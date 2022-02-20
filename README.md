@@ -4,3 +4,13 @@ This website enables a XTZ holder to delegate its coins in just one click, and r
 Available at: https://www.baking.finance
 
 ENJOY :money_with_wings: !
+
+Run the project: 
+
+Deploy the project:
+
+git clone <YOUR_REPOSITORY_URL>
+
+npm install
+
+npm run dev
