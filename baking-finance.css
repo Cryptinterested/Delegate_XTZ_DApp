@@ -165,11 +165,14 @@ a.wallet:hover {
       visibility: hidden;
     }
     #delegatemobile {
-      visibility:visible;
+      visibility: visible;
     }
     #positiondelegate {
       margin-top: auto;
       margin-left: auto;
+    }
+    #tutoriels, #faqq {
+      display: none;
     }
 }
 
