@@ -12,4 +12,6 @@ Deploy the project:
 
  - `npm install`
 
+ - `npm install wow.js`
+
  - `npm run dev`
