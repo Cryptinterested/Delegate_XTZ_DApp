@@ -4,29 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <meta property="og:image" src="./images/logo_baking.png"/>
+    <meta property="og:image" src="./images/baking-finance-thumbnail.png"/>
     <meta name="description" content="Baking.finance - Delegate your tez"/>
-    <meta name="copyright" th:content="'Baking.finance, ' + ${domain}"/>
+    <meta name="copyright" content="Baking.finance"/>
     <meta property="og:title" content="Baking.finance"/>
     <meta property="og:description" content="Baking.finance - Delegate your tez" />
     <meta property="og:type" content="website"/>
-    <meta property="og:url" th:content="${domain}"/>
+    <meta property="og:url" content="https://www.baking.finance"/>
     <title>Baking.finance - Delegate your tez</title>
-    <link rel="shortcut icon" href="./images/logo_baking.png" type="image/x-icon"/>
-    <link type="text/css" rel="stylesheet" href="./bootstrap.css"/>
-    <link type="text/css" rel="stylesheet" href="./default.css"/>
-    <link type="text/css" rel="stylesheet" href="./baking-finance.css"/>
-    <link type="text/css" rel="stylesheet" href="./animate.css"/>
+    <link rel="shortcut icon" href="assets/images/logo_baking.png" type="image/x-icon"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/default.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/baking-finance.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/animate.css"/>
 </head>
 <body>
 
-    <script
-      src="https://unpkg.com/@airgap/beacon-sdk@2.3.0/dist/walletbeacon.min.js"
-      crossorigin="anonymous"
-    ></script>
-
 <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-light navbar-floating" id="navmenu">
+<nav class="navbar navbar-expand-lg navbar-light navbar-floating">
     <div class="container">
         <a id="baking-finance-logo" class="navbar-brand"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,49 +50,12 @@
                 Delegate
                 </a>
             </div>
-                <script>
-                const bakerAddress = "tz1S6H83gugqK4dR5Had9jWR9M1ZdAAVgU5e"; // Replace with baker address
-                const bakerName = "Baking.Finance"; // Replace with baker name / website
-    
-                // Initiate DAppClient
-                const client = new beacon.DAppClient({
-                name: bakerName,
-                });
-    
-                const delegate = () => {
-                client.requestOperation({
-                    operationDetails: [
-                    {
-                        kind: beacon.TezosOperationType.DELEGATION,
-                        delegate: bakerAddress,
-                    },
-                    ],
-                });
-                };
-    
-                // Add event listener to the button
-                document.getElementById("init").addEventListener("click", () => {
-                // Check if we have an active account
-                client.getActiveAccount().then((activeAccount) => {
-                    if (activeAccount) {
-                    // If we have an active account, send the delegate operation directly
-                    delegate();
-                    } else {
-                    // If we don't have an active account, we need to request permissions first and then send the delegate operation
-                    client.requestPermissions().then((permissions) => {
-                        delegate();
-                    });
-                    }
-                });
-                });
-            </script>
-                </div>
-            </div>
         </div>
+    </div>
 </nav>
 
 <!-- Introduction -->
-<div id="introduction" class="page-hero-section bg-image hero-home-1 text-white " th:style="background-image: url(./images/tezos-foundation-grants.png)">
+<div id="introduction" class="page-hero-section bg-image hero-home-1 text-white">
     <div class="hero-caption pt-5">
         <div class="container h-100">
             <div class="row align-items-center h-100">
@@ -105,7 +63,7 @@
                     <div>
                         <div class="badge mb-2 inline-flex-center">
                            <span class="icon mr-1">
-                              <img class="icon height-auto" src="./images/globe-icon.png">
+                              <img class="icon height-auto" src="assets/images/globe-icon.png">
                            </span>
                             #1 baking.finance
                         </div>
@@ -124,11 +82,11 @@
 </div>
 
 <!-- Tezos -->
-<div id="tezos" class="position-realive" th:style="'background-image: url(./pattern_1.svg);'">
+<div id="tezos" class="position-realive">
     <div class="page-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 offset-lg-1 py-3 wow fadeInUp inline-flex-center">
+                <div class="col-lg-6 offset-lg-1 py-3 wow fadeInUp inline-flex-center" style="visibility: visible; animation-name: fadeInUp;">
                     <div>
                         <h1 class="mb-4">Tezos</h1>
                         <p class="mb-4"><strong>Tezos</strong> is a software, precisely a distributed ledger technology also known as a blockchain. <br>
@@ -139,7 +97,7 @@
                 </div>
                 <div class="col-lg-5 py-3 inline-flex-center">
                     <div class="img-place wow zoomIn flex-vertical-direction">
-                        <img id="tezos-design-logo" class="height-auto" src="./images/tezos-design.png" alt="tezos-logo">
+                        <img id="tezos-design-logo" class="height-auto" src="assets/images/tezos-design.png" alt="tezos-logo">
                         <div id="price-widget" class="coinmarketcap-currency-widget" data-currencyid="2011" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="EUR"></div>
                     </div>
                 </div>
@@ -151,14 +109,14 @@
                 <div class="row">
                     <div class="col-lg-5 py-3 inline-flex-center">
                         <div class="img-place mobile-preview wow zoomIn">
-                            <img class="height-auto" src="./images/3d-tezos-decentralized-security-smart-contract.png" alt="smart-contracts-image">
+                            <img class="height-auto" src="assets/images/3d-tezos-decentralized-security-smart-contract.png" alt="smart-contracts-image">
                         </div>
                     </div>
                     <div class="col-lg-6 py-3 mt-lg-5">
                         <div class="iconic-list">
                             <div class="iconic-item wow fadeInUp">
                                 <div class="iconic-md iconic-text bg-warning fg-white rounded-circle">
-                                    <img class="custom-icon" src="./images/contract-icon.png">
+                                    <img class="custom-icon" src="assets/images/contract-icon.png">
                                 </div>
                                 <div class="iconic-content">
                                     <h5>Smart Contracts</h5>
@@ -170,7 +128,7 @@
                             </div>
                             <div class="iconic-item wow fadeInUp">
                                 <div class="iconic-md iconic-text bg-info fg-white rounded-circle">
-                                    <img class="custom-icon" src="./images/security-icon.png">
+                                    <img class="custom-icon" src="assets/images/security-icon.png">
                                 </div>
                                 <div class="iconic-content">
                                     <h5>Security</h5>
@@ -182,7 +140,7 @@
                             </div>
                             <div class="iconic-item wow fadeInUp">
                                 <div class="iconic-md iconic-text bg-indigo fg-white rounded-circle">
-                                    <img class="custom-icon" src="./images/nodes-icon.png">
+                                    <img class="custom-icon" src="assets/images/nodes-icon.png">
                                 </div>
                                 <div class="iconic-content">
                                     <h5>Governance</h5>
@@ -247,7 +205,7 @@
 -->
 
 <!-- Wallets -->
-<div id="wallets" class="page-section" th:style="'pattern_1.svg'">
+<div id="wallets" class="page-section">
     <h2 class="text-center wow fadeIn">Wallets & Applications</h2>
     <div id="wallets-container"  class="container">
         <div class="row">
@@ -258,61 +216,61 @@
                             <h5>AirGap</h5>
                             <p class="fs-small">AirGap is a software <strong>wallet</strong> available for Android, IOS, macOS, Windows.</p>
                         </div>
-                        <img src="./images/airgap-logo.png" alt="label" class="iconic-md fg-white">
+                        <img src="assets/images/airgap-logo.png" alt="label" class="iconic-md fg-white">
                     </a>
                     <a class="iconic-item wow fadeInUp wallet" href="https://cryptonomic.tech/galleon.html" target="_blank">
                         <div class="iconic-content">
                             <h5>Galleon Wallet</h5>
                             <p class="fs-small"><strong>Opensource</strong> and <strong>Tezos</strong> specific, Galleon is a Wallet available on macOS, Windows and Linux.</p>
                         </div>
-                        <img src="./images/cryptonomic-logo.png" alt="label" class="iconic-md fg-white">
+                        <img src="assets/images/cryptonomic-logo.png" alt="label" class="iconic-md fg-white">
                     </a>
                     <a class="iconic-item wow fadeInUp wallet" href="https://trezor.io/" target="_blank">
                         <div class="iconic-content">
                             <h5>Trezor (Hardware)</h5>
                             <p class="fs-small">Trezor is a <strong>Hardware wallet</strong> which helps to protect your private keys aginst hacks.</p>
                         </div>
-                        <img src="./images/trezor-logo.png" alt="label" class="iconic-md fg-white">
+                        <img src="assets/images/trezor-logo.png" alt="label" class="iconic-md fg-white">
                     </a>
                     <a class="iconic-item wow fadeInUp wallet" href="https://templewallet.com/" target="_blank">
                         <div class="iconic-content">
                             <h5>Temple Wallet</h5>
                             <p class="fs-small">A non-custodial web extension wallet, currently one of the most used ones.</p>
                         </div>
-                        <img src="./images/templewallet.png" alt="label" class="iconic-md fg-white">
+                        <img src="assets/images/templewallet.png" alt="label" class="iconic-md fg-white">
                     </a>
                 </div>
             </div>
             <div class="col-lg-4 py-3 wow zoomIn inline-flex-center">
                 <div class="img-place mobile-preview">
-                    <img class="height-auto" src="./images/wallet-application.png" alt="wallet-application">
+                    <img class="height-auto" src="assets/images/wallet-application.png" alt="wallet-application">
                 </div>
             </div>
             <div class="col-lg-4 py-3">
                 <div class="iconic-list">
                     <a class="iconic-item wow fadeInUp wallet" href="https://zengo.com/" target="_blank">
-                        <img src="./images/zengo-logo.png" alt="label" class="iconic-md fg-white">
+                        <img src="assets/images/zengo-logo.png" alt="label" class="iconic-md fg-white">
                         <div class="iconic-content">
                             <h5>ZenGo</h5>
                             <p class="fs-small">ZenGo is a <strong>mutlicurrency-wallet</strong>, supporting Tezos. It is Available on Android & IOS.</p>
                         </div>
                     </a>
                     <a class="iconic-item wow fadeInUp wallet" href="https://trezor.io/" target="_blank">
-                        <img src="./images/logo-kukai.png" alt="label" class="iconic-md fg-white">
+                        <img src="assets/images/logo-kukai.png" alt="label" class="iconic-md fg-white">
                         <div class="iconic-content">
                             <h5>Kukai (Web)</h5>
                             <p class="fs-small">Kukai allows you to create your Tezos Wallet online without requiring a specific application.</p>
                         </div>
                     </a>
                     <a class="iconic-item wow fadeInUp wallet" href="https://trustwallet.com/" target="_blank">
-                        <img src="./images/trust-wallet-logo.png" alt="label" class="iconic-md fg-white">
+                        <img src="assets/images/trust-wallet-logo.png" alt="label" class="iconic-md fg-white">
                         <div class="iconic-content">
                             <h5>Trust Wallet</h5>
                             <p class="fs-small">Well-known multicurrency wallet, available for Android & IOS.</p>
                         </div>
                     </a>
                     <a class="iconic-item wow fadeInUp wallet" href="https://www.ledger.com/" target="_blank">
-                        <img src="./images/ledger-logo.png" alt="label" class="iconic-md fg-white">
+                        <img src="assets/images/ledger-logo.png" alt="label" class="iconic-md fg-white">
                         <div class="iconic-content">
                             <h5>Ledger (Hardware)</h5>
                             <p class="fs-small">Ledger is a <strong>Hardware Wallet</strong>, also known as one of the most secure ones.</p>
@@ -333,12 +291,13 @@
             <div class="col-lg-5 wow fadeIn ">
                 <div class="img-place">
                     <div id="qrcode-zone">
-                        <img class="wow fadeInLeft" src="./images/qr-code-tezos.png" alt="qr-code-tezos" style="width: 80%;">
+                        <img class="wow fadeInLeft" src="assets/images/qr-code-tezos.png" alt="qr-code-tezos" style="width: 80%;">
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">
                     <p id="public-key-p">Public address : <strong>tz1S6H83gugqK4dR5Had9jWR9M1ZdAAVgU5e</strong></p>
                     <input type="hidden" value="tz1S6H83gugqK4dR5Had9jWR9M1ZdAAVgU5e" id="public-key">
+                    <button id="public-key-button" class="btn btn-primary rounded-pill justify-content-center" onclick="copyPublicKey()">Copy the Public Key</button>
                 </div>
             </div>
             <div class="col-lg-7 pl-lg-5 wow fadeInUp">
@@ -346,7 +305,7 @@
                     <div class="iconic-list">
                         <div class="iconic-item wow fadeInUp">
                             <div class="iconic-md iconic-text bg-warning fg-white rounded-circle">
-                                <img class="custom-icon" src="./images/delegate-icon.png">
+                                <img class="custom-icon" src="assets/images/delegate-icon.png">
                             </div>
                             <div class="iconic-content">
                                 <h5 class="font-weight-bold">Delegate your Tez by clicking on the "Delegate" button on top of the page</h5>
@@ -357,7 +316,7 @@
                         </div>
                         <div class="iconic-item wow fadeInUp">
                             <div class="iconic-md iconic-text bg-info fg-white rounded-circle">
-                                <img class="custom-icon" src="./images/key-icon.png">
+                                <img class="custom-icon" src="assets/images/key-icon.png">
                             </div>
                             <div class="iconic-content">
                                 <h5 class="font-weight-bold">Stay the unique owner of your private keys</h5>
@@ -367,7 +326,7 @@
                         </div>
                         <div class="iconic-item wow fadeInUp">
                             <div class="iconic-md iconic-text bg-indigo fg-white rounded-circle">
-                                <img class="custom-icon" src="./images/earning-icon.png">
+                                <img class="custom-icon" src="assets/images/earning-icon.png">
                             </div>
                             <div class="iconic-content">
                                 <h5 class="font-weight-bold">Receive new Tez every 3 days</h5>
@@ -383,14 +342,14 @@
 </div>
 
 <!-- Exchanges -->
-<div id="exchanges" class="page-section no-scroll" th:style="'background-image: url(pattern_1.svg);'">
+<div id="exchanges" class="page-section no-scroll">
     <div class="container">
         <h2 class="text-center wow fadeIn mt-5">Exchanges to buy cryptocurrencies</h2>
         <div class="row justify-content-center mt-4">
             <div class="col-md-6 col-lg-3 py-3">
                 <a href="https://www.binance.com" target="_blank" class="card card-body border-0 text-center wow zoomIn shadow bg-white-transparent exchange-card">
                     <div class="mb-3">
-                        <img class="exchange-logo" src="./images/binance-logo.png" alt="binance-logo">
+                        <img class="exchange-logo" src="assets/images/binance-logo.png" alt="binance-logo">
                     </div>
                     <p class="fs-vlarge font-weight-bolder">Binance</p>
                     <p class="fs-small fg-grey">Number 1 of the exchanges.</p>
@@ -399,7 +358,7 @@
             <div class="col-md-6 col-lg-3 py-3">
                 <a href="https://www.kraken.com/" target="_blank" class="card card-body border-0 text-center wow zoomIn shadow bg-white-transparent exchange-card" data-wow-delay="200ms">
                     <div class="mb-3">
-                        <img class="exchange-logo" src="./images/kraken-logo.png" alt="kraken-logo">
+                        <img class="exchange-logo" src="assets/images/kraken-logo.png" alt="kraken-logo">
                     </div>
                     <p class="fs-vlarge font-weight-bolder">Kraken</p>
                     <p class="fs-small fg-grey">Leader of the US market.</p>
@@ -408,7 +367,7 @@
             <div class="col-md-6 col-lg-3 py-3">
                 <a href="https://www.coinbase.com/" target="_blank" class="card card-body border-0 text-center wow zoomIn shadow bg-white-transparent exchange-card" data-wow-delay="400ms">
                     <div class="mb-3">
-                        <img class="exchange-logo" src="./images/coinbase-logo.png" alt="coinbase-logo">
+                        <img class="exchange-logo" src="assets/images/coinbase-logo.png" alt="coinbase-logo">
                     </div>
                     <p class="fs-vlarge font-weight-bolder">Coinbase</p>
                     <p class="fs-small fg-grey">Well known for its user-friendly interface.</p>
@@ -417,7 +376,7 @@
             <div class="col-md-6 col-lg-3 py-3">
                 <a href="https://crypto.com/" target="_blank" class="card card-body border-0 text-center wow zoomIn shadow bg-white-transparent exchange-card" data-wow-delay="800ms">
                     <div class="mb-3">
-                        <img class="exchange-logo" src="./images/crypto-com-logo.png" alt="crypto-com-logo">
+                        <img class="exchange-logo" src="assets/images/crypto-com-logo.png" alt="crypto-com-logo">
                     </div>
                     <p class="fs-vlarge font-weight-bolder">Crypto.com</p>
                     <p class="fs-small fg-grey">Fintech specializes in cryptocurrencies.</p>
@@ -426,7 +385,7 @@
             <div class="col-md-6 col-lg-3 py-3">
                 <a href="https://swissborg.com/" target="_blank" class="card card-body border-0 text-center wow zoomIn shadow bg-white-transparent exchange-card" data-wow-delay="1000ms">
                     <div class="mb-3">
-                        <img class="exchange-logo" src="./images/swissborg-logo.png" alt="swissborg-logo">
+                        <img class="exchange-logo" src="assets/images/swissborg-logo.png" alt="swissborg-logo">
                     </div>
                     <p class="fs-vlarge font-weight-bolder">SwissBorg</p>
                     <p class="fs-small fg-grey">SwissBorg offers low fees and a user-friendly interface to trade cryptocurrencies.</p>
@@ -485,7 +444,7 @@
 </div>
 
 -->
-<div id="tutoriels" class="page-section no-scroll bg-dark">
+<!--<div id="tutoriels" class="page-section no-scroll bg-dark">
       <h2 id='faq'>Frequently Asked Questions</h2>
       <div class="accordion">
         <div class="accordion-item">
@@ -573,8 +532,118 @@
         </div>
       </div>
     </div>
-    <script src="./script.js"></script>
-</div>
+    <script src="assets/js/script.js"></script>
+</div>-->
+
+    <!-- FAQ -->
+    <div id="faq" class="page-section bg-light">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-5 py-3 wow fadeInUp">
+                    <h2 class="mb-4">Frequently Asked Questions</h2>
+                    <p>If you have any questions about Blockchain, Cryptocurrencies or even Tezos, maybe the following list of questions and answers will help you.</p>
+                    <p class="fg-primary fw-medium">Do you need help?</p>
+                    <a id="contact-us" href="#footer" class="btn btn-gradient btn-split-icon rounded-pill inline-flex-center">
+                     <span class="icon">
+                        <div class="inline-flex-center" style="height: 100%; ">
+                           <img class="custom-icon-2 height-auto" src="assets/images/mail-icon.png">
+                        </div>
+                     </span>
+                        Contact us
+                    </a>
+                </div>
+                <div class="col-lg-7 py-3 no-scroll-x">
+                    <div class="accordion accordion-gap" id="accordionFAQ">
+                        <div class="accordion-item wow fadeInRight">
+                            <div class="accordion-trigger">
+                                <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">What is a cryptocurrency ?</button>
+                            </div>
+                            <div id="collapse1" class="collapse" data-parent="#accordionFAQ">
+                                <div class="accordion-content">
+                                    <p>
+                                        A cryptocurrency is a digital asset issued by a distributed software. The monetary issuance is programmed. It is usable through distributed computer networks.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInRight" data-wow-delay="150ms">
+                            <div class="accordion-trigger">
+                                <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">What is a blockchain ? </button>
+                            </div>
+                            <div id="collapse2" class="collapse" data-parent="#accordionFAQ">
+                                <div class="accordion-content">
+                                    <p>
+                                        Blockchain (also known as distributed ledger) is a computer technology allowing to exchange value (the cryptocurrency), without needing any central entity to control the system. Exchanges and interactions occurring within the blockchain are registered transparently and securely.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInRight" data-wow-delay="300ms">
+                            <div class="accordion-trigger">
+                                <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">What is a baker in the Tezos blockchain ?</button>
+                            </div>
+                            <div id="collapse3" class="collapse" data-parent="#accordionFAQ">
+                                <div class="accordion-content">
+                                    <p>
+                                        Like minors in the Bitcoin blockchain, a Baker is a validator of the Tezos blockchain. He is, by economic incentives, encouraged to validate transactions and create blocks. The Baker ensures information integrity and security of the Tezos blockchain.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInRight" data-wow-delay="450ms">
+                            <div class="accordion-trigger">
+                                <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">What is a Baking.Finance ?</button>
+                            </div>
+                            <div id="collapse4" class="collapse" data-parent="#accordionFAQ">
+                                <div class="accordion-content">
+                                    <p>
+                                        Baking.Finance is a Baker of the Tezos blockchain.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInRight" data-wow-delay="600ms">
+                            <div class="accordion-trigger">
+                                <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">What is delegation ?</button>
+                            </div>
+                            <div id="collapse5" class="collapse" data-parent="#accordionFAQ">
+                                <div class="accordion-content">
+                                    <p>
+                                        It is the action of allowing, on your behalf, a Baker to get your approval in order to validate blocks and participate in the blockchain evolution, through the Tezos voting process.
+                                        By delegating tez, a user will increase a Baker ability to participate in the network and blocks validation. Please note that delegation doesn't mean lending or sending your funds. It is simply about signing a delegation operation in the Tezos blockchain.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInRight" data-wow-delay="650ms">
+                            <div class="accordion-trigger">
+                                <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">How can I earn ~8% annual rewards in Tez ? </button>
+                            </div>
+                            <div id="collapse6" class="collapse" data-parent="#accordionFAQ">
+                                <div class="accordion-content">
+                                    <p>
+                                        By delegating your funds (button DELEGATE above), you become a delegator and make a contribution to our Baker. Thus, every 3 days, you will receive new XTZ from us, to reward your contribution.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInRight" data-wow-delay="800ms">
+                            <div class="accordion-trigger">
+                                <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">Can I lose my funds ? </button>
+                            </div>
+                            <div id="collapse7" class="collapse" data-parent="#accordionFAQ">
+                                <div class="accordion-content">
+                                    <p>
+                                        By delegating your tez, you stay the only owner of the private keys that control the funds. Your delegated funds stay liquid, therefore, at any time you can transfer them, or sell them on a cryptocurrency exchange.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <!-- FAQ 
   <div class="accordion-a">
@@ -669,22 +738,22 @@
                 <div class="mt-4">
                     <a href="https://www.facebook.com/Bakingfinance-100183958589461" target="_blank" class="btn btn-fab btn-primary fg-white">
                         <div class="inline-flex-center" style="height: 100%; align-items: center;">
-                            <img class="custom-icon-2 height-auto" src="./images/facebook-icon.png">
+                            <img class="custom-icon-2 height-auto" src="assets/images/facebook-icon.png">
                         </div>
                     </a>
                     <a href="https://twitter.com/BakingFinance" target="_blank" class="btn btn-fab btn-primary fg-white">
                         <div class="inline-flex-center" style="height: 100%; align-items: center;">
-                            <img class="custom-icon-2 height-auto" src="./images/twitter-icon.png">
+                            <img class="custom-icon-2 height-auto" src="assets/images/twitter-icon.png">
                         </div>
                     </a>
                     <a href="https://www.instagram.com/baking.finance/" target="_blank" class="btn btn-fab btn-primary fg-white">
                         <div class="inline-flex-center" style="height: 100%; align-items: center;">
-                            <img class="custom-icon-2 height-auto" src="./images/instagram-icon.png">
+                            <img class="custom-icon-2 height-auto" src="assets/images/instagram-icon.png">
                         </div>
                     </a>
                     <a href="https://t.me/baking_finance" target="_blank" class="btn btn-fab btn-primary fg-white">
                         <div class="inline-flex-center" style="height: 100%; align-items: center;">
-                            <img class="custom-icon-2 height-auto" src="./images/telegram.png">
+                            <img class="custom-icon-2 height-auto" src="assets/images/telegram.png">
                         </div>
                     </a>
                 </div>
@@ -695,8 +764,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 py-2">
-                <img src="./images/logo-light.png" alt="baking-finance-light-logo" width="40">
-                <p class="d-inline-block ml-2">Copyright &copy; <a th:href="${domain}" class="fg-white fw-medium">Baking.finance</a>. All rights reserved</p>
+                <img src="assets/images/logo-light.png" alt="baking-finance-light-logo" width="40">
+                <p class="d-inline-block ml-2">Copyright &copy; <a href="https://www.baking.finance" class="fg-white fw-medium">Baking.finance</a>. All rights reserved</p>
             </div>
             <div class="col-12 col-md-6 py-2">
                 <ul class="nav justify-content-end">
@@ -708,11 +777,13 @@
         </div>
     </div>
 </footer>
-<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-<script type="text/javascript" th:src="@{/javascripts/jquery-3.5.1.min.js}"></script>
-<script type="text/javascript" th:src="@{/javascripts/bootstrap.bundle.min.js}"></script>
-<script type="text/javascript" th:src="@{/javascripts/wow.min.js}"></script>
-<script type="text/javascript" th:src="@{/javascripts/default.js}"></script>
-<script type="text/javascript" th:src="@{/javascripts/baking-finance.js}"></script>
+    <script src="https://unpkg.com/@airgap/beacon-sdk@2.3.0/dist/walletbeacon.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+    <script type="text/javascript" src="./assets/javascript/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="./assets/javascript/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="./assets/javascript/wow.min.js"></script>
+    <script type="text/javascript" src="./assets/javascript/default.js"></script>
+    <script type="text/javascript" src="./assets/javascript/baking-finance.js"></script>
+    <script type="text/javascript" src="./assets/javascript/delegate.js"></script>
 </body>
 </html>
